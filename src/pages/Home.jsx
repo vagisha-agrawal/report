@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
     <div>Home</div>
-    <Form forms={forms}/>
+    {/* <Form forms={forms}/> */}
     {/* <input type="text" value={age} onChange={setInput} placeholder='0' style={{border:'1px solid black', padding: '10px'}}/> */}
     </>
   )

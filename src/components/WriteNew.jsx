@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FormDataSend } from './FormDataSend';
 
 const WriteNew = () => {
 
@@ -21,11 +22,11 @@ const WriteNew = () => {
         arrFunc(obj)
     }
 
-    const setCompletedTask = (e, i=undefined, arr=undefined, arrFunc=undefined) => {      
+    const setCompletedTask = (e, i = undefined, arr = undefined, arrFunc = undefined) => {
         errorText !== "" && setErrorText("")
         let obj = [...arr]
         obj[i].text = e.target.value
-        arrFunc(obj)        
+        arrFunc(obj)
     }
 
     const setPhoto = (e, i, arr, arrFunc) => {
@@ -63,9 +64,9 @@ const WriteNew = () => {
         setCompleteTask((prevDivs) => {
             const updatedDivs = prevDivs.map((div) =>
                 div.id === parseInt(sourceId)
-                    ? { ...div, isDragging: false }
+                    ? { ...div, isDragging: true }
                     : div.id === targetId
-                        ? { ...div, isDragging: false }
+                        ? { ...div, isDragging: true }
                         : div
             );
             // Reorder the divs array according to the dropped div
@@ -89,14 +90,14 @@ const WriteNew = () => {
     };
 
     const ptHandleDrop = (event, targetId) => {
-        event.preventDefault();
+        // event.preventDefault();
         const sourceId = event.dataTransfer.getData('text/plain');
         setCompleteTask((prevDivs) => {
             const updatedDivs = prevDivs.map((div) =>
                 div.id === parseInt(sourceId)
-                    ? { ...div, isDragging: false }
+                    ? { ...div, isDragging: true }
                     : div.id === targetId
-                        ? { ...div, isDragging: false }
+                        ? { ...div, isDragging: true }
                         : div
             );
             // Reorder the divs array according to the dropped div
@@ -111,6 +112,7 @@ const WriteNew = () => {
         <div className='w-3/4 flex'>
             <div className='w-1/2 p-8 flex flex-col'>
                 {/* <p>Date:- <span className='mx-2'>{new Date().getDate()}-{new Date().getMonth() + 1}-{new Date().getFullYear()}</span></p> */}
+                <FormDataSend data={[completeTask, pendingTask]} />
                 <h5 className='text-left font-bold my-4 underline'>Completed Task :-</h5>
                 <div className="flex flex-col gap-y-4">
                     {completeTask.map((ct, i) => (
@@ -156,7 +158,7 @@ const WriteNew = () => {
                                 <input type="text" value={pt?.text} onBlur={() => blur(i, pendingTask, setPendingTask)} onFocus={() => focus(i, pendingTask, setPendingTask)} onChange={(e) => setCompletedTask(e, i, pendingTask, setPendingTask)} className='w-full border border-black p-2 rounded-lg' />
                                 {errorText !== "" && <p className='text-red-700 text-base text-left'>{errorText}</p>}
                             </div>
-                            
+
                             <div>
                                 {completeTask.length - 1 === i ? <svg onClick={() => pt.text !== "" ? addInput(i, pendingTask, setPendingTask) : setErrorText("Please enter some text first")} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -171,7 +173,7 @@ const WriteNew = () => {
                     ))}
                 </div>
                 <h5 className='text-left font-bold my-4 underline'>Any Comment :-</h5>
-                <textarea style={{border: '1px solid black', borderRadius:'10px'}}rows="4" onChange={(e) => setComment(e.target.value)} value={comment}/>
+                <textarea style={{ border: '1px solid black', borderRadius: '10px' }} rows="4" onChange={(e) => setComment(e.target.value)} value={comment} />
             </div>
             <div className='w-1/2 p-10'>
                 {(completeTask[0].text !== "" || pendingTask[0].text !== "") && <>
