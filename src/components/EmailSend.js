@@ -3,8 +3,8 @@ import emailjs from 'emailjs-com';
 
 export const sendEmail = (emailData) => {
     // Replace these values with your EmailJS template information
-    const templateId = 'template_nun3zyl';
-    const userId = 'c-SWSrzxABxtLtcaj';
+    const templateId = 'template_s2448br';
+    const userId = 'D80Jjb41ZQ-_qFqup';
 
     // Replace these values with the actual data you want to send
     const data = {
@@ -15,7 +15,7 @@ export const sendEmail = (emailData) => {
     };
 
     // Send email using EmailJS
-    emailjs.send('service_vjjj5fh', templateId, data, userId)
+    emailjs.send('service_txwnkqa', templateId, data, userId)
         .then((response) => {
             console.log('Email sent successfully:', response);
         })
