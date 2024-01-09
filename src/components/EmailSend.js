@@ -1,72 +1,30 @@
-
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 
 export const sendEmail = (emailData) => {
-    // Replace these values with your EmailJS template information
-    const templateId = 'template_s2448br';
-    const userId = 'D80Jjb41ZQ-_qFqup';
+  // Replace these values with your EmailJS template information
+  const templateId = "template_s2448br";
+  const userId = "D80Jjb41ZQ-_qFqup";
 
-    // Replace these values with the actual data you want to send
-    const data = {
-        to_name: emailData.to_name,
-        reply_to: emailData.reply_to,
-        subject: emailData.subject,
-        message: emailData.message,
-    };
+  // Replace these values with the actual data you want to send
+  const data = {
+    to_name: emailData.to_name,
+    reply_to: emailData.reply_to,
+    subject: emailData.subject,
+    message: emailData.message,
+  };
 
-    // Send email using EmailJS
-    emailjs.send('service_txwnkqa', templateId, data, userId)
-        .then((response) => {
-            console.log('Email sent successfully:', response);
-        })
-        .catch((error) => {
-            console.error('Error sending email:', error);
-        });
+  // Send email using EmailJS
+  emailjs
+    .send("service_txwnkqa", templateId, data, userId)
+    .then((response) => {
+      // console.log('Email sent successfully:', response);
+      alert("Email sent successfully");
+    })
+    .catch((error) => {
+      // console.error('Error sending email:', error);
+      alert(error.message);
+    });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import emailjs from 'emailjs-com';
 // import toastr from 'toastr';
