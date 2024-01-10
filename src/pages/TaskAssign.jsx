@@ -172,7 +172,7 @@ const TaskAssign = () => {
       taskIndex = task.tasks.findIndex((v) => v.id === activeTask.id);
     });
     const updatedTasks = [...task];
-    updatedTasks[taskIndex].isRunning = false;
+    // updatedTasks[taskIndex].isRunning = false;
     setTaskArr(updatedTasks);
     setActiveTask(null);
   };
