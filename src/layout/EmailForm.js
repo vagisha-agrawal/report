@@ -34,16 +34,16 @@ const EmailForm = ({ data, setIsModalOpen }) => {
       <div className="z-40 fixed  h-screen w-screen blur-3xl"></div>
       <div className="z-50 fixed h-screen w-screen  ">
         <form
-          class=" w-1/3 mx-auto mt-20 p-6 bg-gray-200 border rounded-lg shadow-lg"
+          className=" w-1/3 mx-auto mt-20 p-6 bg-gray-200 border rounded-lg shadow-lg"
           onSubmit={handleSubmit}
         >
-          <h2 class="text-2xl font-bold mb-6">Daily Report Form</h2>
-          <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="name">
+          <h2 className="text-2xl font-bold mb-6">Daily Report Form</h2>
+          <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
               Name
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
               name="to_name"
@@ -51,12 +51,12 @@ const EmailForm = ({ data, setIsModalOpen }) => {
               placeholder="Enter your name"
             />
           </div>
-          <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="Email">
+          <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="Email">
               Email
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="Email"
               type="text"
               name="reply_to"
@@ -66,13 +66,13 @@ const EmailForm = ({ data, setIsModalOpen }) => {
           </div>
           <div className="flex gap-5">
             <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Send
             </button>
             <button
-              class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="reset"
               onClick={() => setIsModalOpen(false)}
             >
